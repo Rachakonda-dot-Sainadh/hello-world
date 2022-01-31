@@ -1,16 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-service
+  name: tomcat-service
   labels:
-    app: demoapp 
+    app: tomcat 
 spec:
   type: ClusterIp
   selector:
-    app: demoapp 
+    app: tomcat 
 
   ports:
     - port: 8080
       targetPort: 8080
-
-  type: LoadBalancer
