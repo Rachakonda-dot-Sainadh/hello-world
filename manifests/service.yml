@@ -7,7 +7,7 @@ metadata:
 spec:
   type: ClusterIp
   selector:
-    app:myapp 
+    app: myapp 
 
   ports:
     - port: 8080
