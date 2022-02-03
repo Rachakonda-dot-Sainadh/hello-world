@@ -1,23 +1,23 @@
 apiVersion: apps/v1 
 kind: Deployment
 metadata:
-  name: tomcat-deployment
+  name: myapp-deployment
   labels: 
-     app: tomcat
+     app: myapp
 
 spec:
   replicas: 2 
   selector:
     matchLabels:
-      app: tomcat
+      app: myapp
 
   template:
     metadata:
       labels:
-        app: tomcat
+        app: myapp
     spec:
       containers:
-      - name: tomcat
+      - name: tomcat_myapp
         image: sainathrachakonda/tomcat
         imagePullPolicy: Always
         ports:
