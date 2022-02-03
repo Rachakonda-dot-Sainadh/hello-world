@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: tomcat-gateway
+  name: myapp-gateway
 spec:
   selector:
     istio: ingressgateway
