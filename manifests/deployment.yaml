@@ -17,7 +17,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: tomcat_myapp
+      - name: myapp-v1
         image: sainathrachakonda/tomcat
         imagePullPolicy: Always
         ports:
