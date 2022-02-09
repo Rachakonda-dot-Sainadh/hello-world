@@ -8,29 +8,23 @@ spec:
   gateways:
   - myapp-gateway
   http:
-  - name: myapp-v2
+  - name: myapp
     route:
     - destination:
-        host: myapp.com
-        subset: v2
-   - name: myapp-v1
-     route:
-     - destination:
-          host: myapp.com
-          subset: vi
+        host: myapp
+        subset: v1
+   
 
 ---
 
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-   name: myapp-destination
+   name: myapp
 spec:
   host: myapp.com
   subsets:
   - name: v1
     labels:
       version: v1
-  - name: v2
-    labels:
-       version: v2
+  
