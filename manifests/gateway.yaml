@@ -11,4 +11,4 @@ spec:
       name: tomcat
       protocol: HTTP
     hosts:
-    - "*"
+    - myapp.com
