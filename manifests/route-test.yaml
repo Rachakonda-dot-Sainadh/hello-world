@@ -8,7 +8,7 @@ spec:
   gateways:
   - myapp-gateway
   http:
-  - name: myapp-v2
+  - name: myapp
     match:
     - headers:
         cookie:
@@ -22,3 +22,19 @@ spec:
     - destination: 
         host: myapp
         subset: v1
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata: 
+  name: myapp
+spec:
+  host: myapp
+  subsets:
+  - name: v1
+    labels: 
+      subset: v1
+  - name: v2
+    labels: 
+      subset: v2
