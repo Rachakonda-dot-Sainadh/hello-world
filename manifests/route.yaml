@@ -4,11 +4,27 @@ metadata:
   name: myapp
 spec:
   hosts:
-  - "*"
+  - myapp.com
   gateways:
   - myapp-gateway
   http:
-  - name: myapp-default
+  - name: myapp
     route:
     - destination:
         host: myapp
+        subset: v1
+   
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+   name: myapp
+spec:
+  host: myapp.com
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  
