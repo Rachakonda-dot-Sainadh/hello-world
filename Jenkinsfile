@@ -11,7 +11,6 @@ pipeline {
       steps {
         build job: 'build-app', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
-          string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
          ]
       }
@@ -24,7 +23,6 @@ pipeline {
       steps {
         build job: 'deploy-app', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
-          string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
         ]
       }
@@ -37,7 +35,6 @@ pipeline {
       steps {
         build job: 'test-app', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
-          string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
        ]
       }
@@ -50,7 +47,6 @@ pipeline {
       steps {
         build job: 'update-version', parameters: [
           string(name: 'VERSION', value: "${env.VERSION}"),
-          string(name: 'APPLICATION', value: "${env.APPLICATION}"),
           string(name: 'ENVIRONMENT', value: "${env.ENVIRONMENT}")
         ]
       }
